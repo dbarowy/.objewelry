@@ -15,9 +15,24 @@ let main args =
     if (Array.length args = 0) || (Array.length args > 1) then usage()
     else
         let input = args[0]
-        let parsed = parse(input)
+        // Handles direct specification on terminal, ex. dotnet run "black cat ears in size 5 catring.txt"
+        if input.Contains(" ") then
+            let parsed = parse(input)
+            match parsed with
+            | Some details -> evalDetails details
+            | None -> printfn "Not a valid ring specification."
+        // Handles specification within a file,  ex. dotnet run example-2.txt
+        else
+            let fileInputList: string list =
+                try
+                    IO.File.ReadLines(input) |> Seq.toList
+                with
+                    | :? System.IO.FileNotFoundException -> 
+                        printfn "The file you specified does not exist"
+                        usage()
 
-        match parsed with
-        | Some details -> evalDetails details
-        | None -> printfn "Not a valid ring specification."
+            let parsedFile = parse(fileInputList[0])
+            match parsedFile with
+            | Some details -> evalDetails details
+            | None -> printfn "Not a valid ring specification."   
     0
