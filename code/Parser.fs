@@ -11,11 +11,11 @@ type Design =
 | Band of string
 | MoonAndStars of string
 
-type Details = {color: Color; design: Design; size: float; file: string}
+type Details = {color: Color; design: Design; size: int; file: string}
 
-// Parses a size specification and casts it to a float
-let size: Parser<float> =
-    pbetween pws0 ((pmany1 pdigit) |>> (fun x -> x |> stringify |> float)) pws0
+// Parses a size specification and casts it to an int
+let size: Parser<int> =
+    pbetween pws0 ((pmany1 pdigit) |>> (fun x -> x |> stringify |> int)) pws0
 
 // Parses a string specifying color and casts it into type Color
 let color: Parser<Color> =
@@ -30,7 +30,7 @@ let design: Parser<Design> =
     <|> ((pbetween pws0 (pstr "moon and stars") pws0) |>> (fun m -> MoonAndStars(m)))
 
 let file: Parser<string> =
-    pbetween pws0 (pseq (pmany1 pletter) (pstr ".txt") (fun (a,b) -> (a |> stringify) + ".txt")) pws0
+    pbetween pws0 (pseq (pmany1 pletter) (pstr ".stl") (fun (a,b) -> (a |> stringify) + ".stl")) pws0
 
 let details: Parser<Details> =
     (pseq color 

@@ -1,0 +1,43 @@
+{ color = Gold "gold"
+  design = Band "band"
+  size = 8.0
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }{ color = Gold "gold"
+  design = Band "band"
+  size = 8
+  file = "rings.txt" }

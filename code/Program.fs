@@ -19,7 +19,7 @@ let main args =
         if input.Contains(" ") then
             let parsed = parse(input)
             match parsed with
-            | Some details -> evalDetails details
+            | Some details -> evalSquareDetails details
             | None -> printfn "Not a valid ring specification."
         // Handles specification within a file,  ex. dotnet run example-2.txt
         else
@@ -33,6 +33,6 @@ let main args =
 
             let parsedFile = parse(fileInputList[0])
             match parsedFile with
-            | Some details -> evalDetails details
+            | Some details -> evalSquareDetails details
             | None -> printfn "Not a valid ring specification."   
     0
