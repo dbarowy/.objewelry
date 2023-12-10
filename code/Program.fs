@@ -2,14 +2,19 @@ open Combinator
 open Parser
 open Evaluator
 open System
+open Test
 
 [<EntryPoint>]
 
 let main args =
+
+    parserTest
+    evalTest
+    
     let usage() =
         printfn "dotnet run <details>"
         printfn "\twhere <details> has the form <color> <design> in size <size> <file>"
-        printfn "\tfor example, \"gold cat ears in size 7 file.txt\""
+        printfn "\tfor example, \"gold cat ears in size 7 file.stl\""
         exit 1
     
     if (Array.length args = 0) || (Array.length args > 1) then usage()

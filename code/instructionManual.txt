@@ -1,7 +1,0 @@
-Now that you have an STL file, you are nearly ready to 3D print a ring!
-Your next step will be to visit the Makerspace at Williams College (makerspace@williams.edu).
-You can either transfer the STL file onto a flash drive or bring your computer to the Makerspace.
-At the Makerspace, the STL file will be processed by a slicing software, then the printing process can begin.
-While you are working with the lovely people at the Makerspace, be sure to specify that you would like to print a Gold "gold" ring.
-
-Good luck and thanks for using our language!
