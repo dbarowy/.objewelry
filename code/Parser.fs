@@ -14,7 +14,7 @@ let color: Parser<Color> =
 
 // Parses a string specifying design choice and casts it into type Design
 let design: Parser<Design> =
-    ((pbetween pws0 (pstr "cat ears") pws0) |>> (fun c -> CatEars(c)))
+    ((pbetween pws0 (pstr "heart") pws0) |>> (fun c -> Heart(c)))
     <|> ((pbetween pws0 (pstr "band") pws0) |>> (fun b -> Band(b)))
     <|> ((pbetween pws0 (pstr "moon and stars") pws0) |>> (fun m -> MoonAndStars(m)))
 
@@ -24,7 +24,7 @@ let file: Parser<string> =
 let details: Parser<Details> =
     (pseq color 
         (pseq design 
-            (pseq (pright (pstr "in size") size) file (fun (s,f) -> {size = s; file = f; color = Gold(""); design = CatEars("")}))
+            (pseq (pright (pstr "in size") size) file (fun (s,f) -> {size = s; file = f; color = Gold(""); design = Heart("")}))
         (fun (d,sf) -> {design = d; size = sf.size; file = sf.file; color = Gold("")}))
     (fun (c,dsf) -> {color = c; design = dsf.design; size = dsf.size; file = dsf.file}))
 

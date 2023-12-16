@@ -5,13 +5,15 @@ open AST
 
 
 let format (word: string) =
-    if word.Contains(".") or word = "vertex" then
+    if word.Contains(".") || word = "vertex" then
         word
     else
         word + ".0"
 
 let createInstructionManual (details: Details) =
     let fileName = "instructionManual.txt"
+    System.IO.File.WriteAllText(fileName, "")
+
     let instructionManual = System.IO.File.ReadLines("instructionmanualtemplate.txt") |> Seq.toList
     for line in instructionManual do
         let text = line.ToString() + Environment.NewLine
@@ -22,11 +24,14 @@ let createInstructionManual (details: Details) =
             System.IO.File.AppendAllText(fileName, text)
 
 let evalDetails (details: Details) =
-    let templateLines = System.IO.File.ReadLines("bandsize5template.stl") |> Seq.toList
+    let templateLines =
+        match details.design with
+        | Heart "heart" -> System.IO.File.ReadLines("heartRingTemplate.stl") |> Seq.toList
+        | Band "band" -> System.IO.File.ReadLines("bandsize5template.stl") |> Seq.toList
+        | MoonAndStars "moon and stars" -> System.IO.File.ReadLines("moonStarTemplate.stl") |> Seq.toList
 
     // Scale is determined from standard ring sizing
     let scale = 1.05449**(float details.size - 5.0)
-    //let scale = 2
 
     for line in templateLines do
         let text = line.ToString() + Environment.NewLine

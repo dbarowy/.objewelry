@@ -12,7 +12,8 @@ let main args =
     evalTest
     
     let usage() =
-        printfn "dotnet run <details>"
+        printfn ("Usage Statement:")
+        printfn "\tdotnet run <details>"
         printfn "\twhere <details> has the form <color> <design> in size <size> <file>"
         printfn "\tfor example, \"gold cat ears in size 7 file.stl\""
         exit 1

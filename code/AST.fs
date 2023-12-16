@@ -6,7 +6,7 @@ type Color =
 | Silver of string
 
 type Design =
-| CatEars of string
+| Heart of string
 | Band of string
 | MoonAndStars of string
 
