@@ -16,6 +16,7 @@
 \usepackage[space]{grffile}
 \usepackage{booktabs}
 \usepackage{forest}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
 % This will set LaTeX to look for figures in the same directory as the .tex file
 \graphicspath{.} % The dot means current directory.
@@ -50,14 +51,17 @@
 % DON'T CHANGE ANYTHING ABOVE HERE
 
 % Edit below as instructed
-\newcommand{\Lab}{9}	% Replace 0 with the actual problem set #
+\newcommand{\Lab}{10}	% Replace 0 with the actual problem set #
 \newcommand{\ProblemHeader}	% Don't change this!
 
 \begin{document}
 
-\section*{.objewelry: Draft Project Specification}
+\section*{.objewelry: Project Specification}
 
-Morgan Steckler \& Alisha Naidu
+Morgan Steckler \& Alisha Naidu \\
+
+Watch our video here!
+\url{https://drive.google.com/file/d/1lS4bHTh3Y6W6AUQrTj5nbGME7e3dozbu/view?usp=sharing}
 
 \section{Introduction}
 We plan to build a language that parses specifications from the user to create an STL file that models a personalized ring. Then, the user can export the file to a 3D printer to create a ring. The language will also return a text file with easy to follow instructions for how to use this .stl file to print their ring in the Williams Makerspace. This can help make using 3D printers more accessible to people who have less experience in the 3D printing process, since users can input specifications they would like for their ring (such as size, color, and shape) and be provided with an STL file. This makes the process of obtaining an STL file much simpler, rather than having to create and modify the file from scratch. It also does not require purchasing expensive modeling software. \\ \\
